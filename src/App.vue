@@ -1,14 +1,15 @@
 <script>
-import todoListItem from "./components/todoListItem.vue";
 import todoList from "./components/todoList.vue";
-import Summary from "./components/Summary.vue";
+import { ref } from "vue";
 import addTodo from "./components/addTodo.vue";
 export default {
   components: {
-    todoListItem,
-    Summary,
     addTodo,
     todoList,
+  },
+  setup() {
+    const todoList = ref([]);
+    return { todoList };
   },
 };
 </script>
@@ -19,7 +20,7 @@ export default {
       <h3 class="text-center text-2xl">Task Tracker</h3>
       <hr />
       <addTodo />
-      <todoList />
+      <todoList :todoList="todoList" />
     </div>
   </div>
 </template>
