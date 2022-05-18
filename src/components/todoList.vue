@@ -1,6 +1,7 @@
 <template>
   <section class="mt-4">
     <TodoListItem
+      @delete-event="$emit('delete-even', $event)"
       v-for="todoItem in todoList"
       :key="todoItem.id"
       :todo="todoItem"
