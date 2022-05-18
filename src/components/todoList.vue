@@ -7,7 +7,7 @@
       :todo="todoItem"
     />
     <small>Number of items {{ todoLength }} </small>
-    <Summary />
+    <Summary :todoList="todoList" />
   </section>
 </template>
 <script>
