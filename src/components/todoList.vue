@@ -7,9 +7,7 @@
       :todo="todoItem"
     />
     <hr />
-    <p v-if="todoLength == 0" class="text-center text-sm">
-      There is no todo to do
-    </p>
+    <p v-if="todoLength == 0" class="text-center text-sm">There is no todo</p>
     <small v-else>Number of todo : {{ todoLength }} </small>
     <Summary :todoList="todoList" :todoLength="todoLength" />
   </section>

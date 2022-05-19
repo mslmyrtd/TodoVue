@@ -9,6 +9,7 @@
       />
       <span class="text-lg">{{ todo.title }}</span>
     </label>
+
     <button
       @click="deleteItem"
       class="bg-red-400 px-2 py-1 rounded-md active:bg-red-600"

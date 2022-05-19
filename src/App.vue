@@ -21,7 +21,6 @@ export default {
   setup() {
     const todoList = ref([]);
     const AddTodo = (todoText) => {
-      console.log(todoText);
       todoList.value.push({
         id: new Date().getTime(),
         title: todoText,
