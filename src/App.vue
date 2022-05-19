@@ -1,15 +1,27 @@
+<template>
+  <div class="w-screen h-screen bg-gray-400 pt-10">
+    <div class="bg-gray-700 rounded-md shadow-md text-white w-1/3 mx-auto p-3">
+      <h3 class="text-center text-2xl">Task Tracker</h3>
+      <hr />
+      <AddTodo :AddTodo="AddTodo" />
+      <TodoList :todoList="todoList" @delete-event="deleteItem" />
+    </div>
+  </div>
+</template>
+
 <script>
-import todoList from "./components/todoList.vue";
+import TodoList from "./components/todoList.vue";
 import { ref } from "vue";
-import addTodo from "./components/addTodo.vue";
+import AddTodo from "./components/addTodo.vue";
 export default {
   components: {
-    addTodo,
-    todoList,
+    AddTodo,
+    TodoList,
   },
   setup() {
     const todoList = ref([]);
     const AddTodo = (todoText) => {
+      console.log(todoText);
       todoList.value.push({
         id: new Date().getTime(),
         title: todoText,
@@ -22,16 +34,5 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="w-screen h-screen bg-gray-400 pt-10">
-    <div class="bg-gray-700 rounded-md shadow-md text-white w-1/3 mx-auto p-3">
-      <h3 class="text-center text-2xl">Task Tracker</h3>
-      <hr />
-      <addTodo :AddTodo="AddTodo" />
-      <todoList :todoList="todoList" @delete-event="deleteItem" />
-    </div>
-  </div>
-</template>
 
 <style></style>

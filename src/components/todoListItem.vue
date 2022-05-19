@@ -7,7 +7,7 @@
         :id="`todo_${todo.id}_completed`"
         class="mr-2"
       />
-      <span class="text-lg">{{ todo.tile }}</span>
+      <span class="text-lg">{{ todo.title }}</span>
     </label>
     <button
       @click="deleteItem"

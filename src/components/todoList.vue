@@ -1,22 +1,26 @@
 <template>
   <section class="mt-4">
     <TodoListItem
-      @delete-event="$emit('delete-even', $event)"
+      @delete-event="$emit('delete-event', $event)"
       v-for="todoItem in todoList"
       :key="todoItem.id"
       :todo="todoItem"
     />
-    <small>Number of items {{ todoLength }} </small>
-    <Summary :todoList="todoList" />
+    <hr />
+    <p v-if="todoLength == 0" class="text-center text-sm">
+      There is no todo to do
+    </p>
+    <small v-else>Number of todo : {{ todoLength }} </small>
+    <Summary :todoList="todoList" :todoLength="todoLength" />
   </section>
 </template>
 <script>
-import todoListItem from "./todoListItem.vue";
+import TodoListItem from "./todoListItem.vue";
 import Summary from "./Summary.vue";
 import { computed } from "vue";
 export default {
   components: {
-    todoListItem,
+    TodoListItem,
     Summary,
   },
   props: {
